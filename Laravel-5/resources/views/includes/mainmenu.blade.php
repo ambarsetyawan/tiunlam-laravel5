@@ -16,7 +16,11 @@
 
     <div class="collapse navbar-collapse" id="collapse-menu">
       <ul class="nav navbar-nav">
+      @if (Lang::getLocale()=='id')
       <li class="active"><a href="{{ route('homepage') }}">{{ trans('menu.home') }}<span class="sr-only">(current)</span></a></li>
+      @else
+      <li class="active"><a href="{{ url('/en') }}">{{ trans('menu.home') }}<span class="sr-only">(current)</span></a></li>
+      @endif
       @if (Lang::getLocale()=='id')
       <li class="dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ trans('menu.profil') }}<span class="caret"></span></a>
