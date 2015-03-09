@@ -1,0 +1,45 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:500);
+
+#mainbody {
+	min-height: 480px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Roboto';
+}
+
+body {
+	padding-top: 50px;
+	padding-bottom: 20px;
+  	font-family: 'Roboto';
+}
+
+p {
+	color: #000000;
+}
+
+.alert {
+    margin-bottom: 0px;
+    padding: 10px;
+}
+
+#owl-slider .item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+
+

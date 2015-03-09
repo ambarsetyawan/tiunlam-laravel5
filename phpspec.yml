@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: tiunlam
+        psr4_prefix: tiunlam
+        src_path: app
