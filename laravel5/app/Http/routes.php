@@ -11,8 +11,11 @@ if (in_array($locale, Config::get('app.available_locales'))) {
     $locale = null;
 }
 
-View::share('semua_profil', Profil::orderBy('created_at', 'desc')->get());
-View::share('all_about', About::orderBy('created_at', 'desc')->get());
+if (Schema::hasTable('profil'))
+{
+    View::share('semua_profil', Profil::orderBy('created_at', 'desc')->get());
+    View::share('all_about', About::orderBy('created_at', 'desc')->get());
+}
 
 Route::group(array('prefix' => $locale), function()
 {
