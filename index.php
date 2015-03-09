@@ -18,7 +18,7 @@
 |
 */
 
-require __DIR__.'/laravel5/bootstrap/autoload.php';
+require __DIR__.'/Laravel-5/bootstrap/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ require __DIR__.'/laravel5/bootstrap/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/laravel5/bootstrap/app.php';
+$app = require_once __DIR__.'/Laravel-5/bootstrap/app.php';
 
 /*
 |--------------------------------------------------------------------------
