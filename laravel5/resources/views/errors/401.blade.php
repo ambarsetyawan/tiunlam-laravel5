@@ -36,7 +36,7 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title">503-Lagi Maintenance Sob!</div>
+				<div class="title">401-Cuma Admin Yang Boleh Masuk Sini Sob!</div>
 			</div>
 		</div>
 	</body>

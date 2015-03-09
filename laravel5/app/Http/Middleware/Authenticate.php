@@ -36,11 +36,12 @@ class Authenticate {
 		{
 			if ($request->ajax())
 			{
-				return response('Unauthorized.', 401);
+				return response()->view('errors.401');
 			}
 			else
 			{
-				return redirect()->guest('admin/login');
+				return response()->view('errors.401');
+				#return redirect()->guest('admin/login');
 			}
 		}
 
