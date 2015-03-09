@@ -38,7 +38,7 @@
 | -------------------------------------------------------------------*/
 
 
-	$config['img_path'] = '/tiunlam/public/media/gambar'; // Relative to domain name
+	$config['img_path'] = '/tiunlam/media/gambar'; // Relative to domain name
 	$config['upload_path'] = $_SERVER['DOCUMENT_ROOT'] . $config['img_path']; // Physical path. [Usually works fine like this]
 
 

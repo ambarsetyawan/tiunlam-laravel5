@@ -94,12 +94,13 @@ class AdminController extends Controller {
 
     public function store_berita()
     {
+    $root = realpath(base_path('../'));
     $path = '/media/gambar/';
-  $namafile = '';
+    $namafile = '';
 
    if (Request::hasFile('gambar')) {
         $file           = Request::file('gambar');
-        $filepath       = public_path() . $path;
+        $filepath       = $root . $path;
         $namafile       = $file->getClientOriginalName();
         $resize         = Image::make($file->getRealPath())->resize('640','480')->save($filepath . $namafile);
         Berita::create(['judul' => Request::get('judul'),
@@ -119,24 +120,25 @@ class AdminController extends Controller {
 
   public function store_berita_en()
   {
+  $root = realpath(base_path('../'));
   $path = '/media/gambar/';
   $namafile = '';
 
  if (Request::hasFile('gambar')) {
       $file           = Request::file('gambar');
-      $filepath       = public_path() . $path;
+      $filepath       = $root . $path;
       $namafile       = $file->getClientOriginalName();
       $resize         = Image::make($file->getRealPath())->resize('640','480')->save($filepath . $namafile);
-      News::create(['judul' => Request::get('judul'),
+      News::create(['judul'   => Request::get('judul'),
                     'konten'  => Request::get('konten'),
                     'slug'    => str_slug(Request::get('judul')),
                     'gambar'  => $path . $namafile]);
   }
   else
   {
-      News::create(['judul' => Request::get('judul'),
+      News::create(['judul'   => Request::get('judul'),
                    'konten'   => Request::get('konten'),
-                   'slug'    => str_slug(Request::get('judul')),
+                   'slug'     => str_slug(Request::get('judul')),
                    'gambar'   => $namafile]);
   }
   return Redirect::route('daftar_berita');
@@ -157,6 +159,7 @@ class AdminController extends Controller {
 
     public function update_berita($slug)
     {
+    $root = realpath(base_path('../'));
     $path = '/media/gambar/';
     $namafile = '';
 
@@ -164,24 +167,24 @@ class AdminController extends Controller {
 
     if (Request::hasFile('gambar')) {
         $file           = Request::file('gambar');
-        $filepath       = public_path() . $path;
+        $filepath       = $root . $path;
         $namafile       = $file->getClientOriginalName();
         $resize         = Image::make($file->getRealPath())->resize('640','480')->save($filepath . $namafile);
         $berita->fill(['judul'  => Request::get('judul'),
                      'konten'   => Request::get('konten'),
-                     'slug' => str_slug(Request::get('judul')),
+                     'slug'     => str_slug(Request::get('judul')),
                      'gambar'   => $path . $namafile]);
     } else {
-        $berita->fill(['judul'=> Request::get('judul'),
-                     'slug' => str_slug(Request::get('judul')),
-                     'konten'  => Request::get('konten')]);
+        $berita->fill(['judul'  => Request::get('judul'),
+                     'slug'     => str_slug(Request::get('judul')),
+                     'konten'   => Request::get('konten')]);
     }
 
     if (Request::get('hapus_gambar') =='ya') {
-        $berita->fill(['judul'=> Request::get('judul'),
-                     'konten'  => Request::get('konten'),
-                     'slug' => str_slug(Request::get('judul')),
-                     'gambar'      => $namafile]);
+        $berita->fill(['judul'  => Request::get('judul'),
+                     'konten'   => Request::get('konten'),
+                     'slug'     => str_slug(Request::get('judul')),
+                     'gambar'   => $namafile]);
 
     }
 
@@ -192,6 +195,7 @@ class AdminController extends Controller {
 
     public function update_berita_en($slug)
     {
+    $root = realpath(base_path('../'));
     $path = '/media/gambar/';
     $namafile = '';
 
@@ -199,24 +203,24 @@ class AdminController extends Controller {
 
     if (Request::hasFile('gambar')) {
         $file           = Request::file('gambar');
-        $filepath       = public_path() . $path;
+        $filepath       = $root . $path;
         $namafile       = $file->getClientOriginalName();
         $resize         = Image::make($file->getRealPath())->resize('640','480')->save($filepath . $namafile);
         $berita->fill(['judul'  => Request::get('judul'),
                      'konten'   => Request::get('konten'),
-                     'slug' => str_slug(Request::get('judul')),
+                     'slug'     => str_slug(Request::get('judul')),
                      'gambar'   => $path . $namafile]);
     } else {
         $berita->fill(['judul'=> Request::get('judul'),
-                     'slug' => str_slug(Request::get('judul')),
-                     'konten'  => Request::get('konten')]);
+                     'slug'   => str_slug(Request::get('judul')),
+                     'konten' => Request::get('konten')]);
     }
 
     if (Request::get('hapus_gambar') =='ya') {
         $berita->fill(['judul'=> Request::get('judul'),
-                     'konten'  => Request::get('konten'),
-                     'slug' => str_slug(Request::get('judul')),
-                     'gambar'      => $namafile]);
+                     'konten' => Request::get('konten'),
+                     'slug'   => str_slug(Request::get('judul')),
+                     'gambar' => $namafile]);
 
     }
 

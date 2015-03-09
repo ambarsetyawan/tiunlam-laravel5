@@ -25,6 +25,7 @@
 @section('content')
 <div class="col-md-12">
 <h2>Judul Konten</h2>
+<h1>{{ realpath(dirname(__FILE__)) }}</h1>
 <p>Lorem ipsum dolor sit amet, magna minim oratio sea ei. Sumo ubique maiestatis sea ut, dicta consectetuer ius ad. Ad mea etiam paulo similique, legere admodum similique an mel. Sea ei ubique soluta, mei eu nibh definitiones, in quo hinc delenit. Pro ne solum malis tamquam.
 
 Ad minim comprehensam sed. Ad sed verterem maiestatis. Dolore consulatu an nam, eam rebum convenire consequat an, qui ea regione perpetua. Eum cu ferri utinam virtute. Nam eu sale ocurreret principes, usu veritus epicurei contentiones te, veri mazim harum mel id. Has id harum simul, has vidit movet eu, pro eu nibh quando ridens. Ei per dico vidit debitis, an cum meliore mediocrem hendrerit, sit diceret mediocrem ea.
