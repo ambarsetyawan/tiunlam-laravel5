@@ -29,32 +29,6 @@ p {
 	color: #ffffff;
 }
 
-.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > .active > a {
-  font-size : 16px;
-  color: #ffffff;
-}
-
-.navbar-default .navbar-nav > .active > a {
-  color: #00e6e6;
-}
-
-.navbar-default .navbar-nav > li > a:hover {
-  color: #00e6e6;
-}
-
-a {
-  color: #ffffff;
-}
-
-a:hover {
-  color: #00e6e6;
-}
-
-.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
-  background-color: #000000;
-  color: #00e6e6;
-}
-
 .alert {
     margin-bottom: 0px;
     padding: 10px;
