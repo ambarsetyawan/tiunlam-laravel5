@@ -16,13 +16,14 @@
 
     <div class="collapse navbar-collapse" id="collapse-menu">
       <ul class="nav navbar-nav">
+      @if (Request::is('/')) <li class="active"> @else <li> @endif
       @if (Lang::getLocale()=='id')
-      <li class="active"><a href="{{ route('homepage') }}">{{ trans('menu.home') }}<span class="sr-only">(current)</span></a></li>
+      <a href="{{ route('homepage') }}"><i class="glyphicon glyphicon-home"></i> {{ trans('menu.home') }}<span class="sr-only">(current)</span></a></li>
       @else
-      <li class="active"><a href="{{ url('/en') }}">{{ trans('menu.home') }}<span class="sr-only">(current)</span></a></li>
+      <a href="{{ url('/en') }}"><i class="glyphicon glyphicon-home"></i> {{ trans('menu.home') }}<span class="sr-only">(current)</span></a></li>
       @endif
       @if (Lang::getLocale()=='id')
-      <li class="dropdown">
+      @if (Request::is('profil/*')) <li class="dropdown active"> @else <li class="dropdown"> @endif
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ trans('menu.profil') }}<span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu">
           @foreach($semua_profil as $profil)
@@ -34,7 +35,8 @@
           @endforeach
         </ul>
       </li>
-      <li><a href="{{ route('berita.index') }}">{{ trans('menu.berita') }}</a></li>
+      @if (Request::is('berita') or Request::is('berita/*')) <li class="active"> @else <li> @endif
+      <a href="{{ route('berita.index') }}">{{ trans('menu.berita') }}</a></li>
       @elseif (Lang::getLocale()=='en')
       <li class="dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ trans('menu.profil') }}<span class="caret"></span></a>
@@ -51,7 +53,8 @@
       <li><a href="{{ route('berita.index_en') }}">{{ trans('menu.berita') }}</a></li>
       @endif
       <li><a href="#">{{ trans('menu.event') }}</a></li>
-      <li><a href="{{ url('pdf') }}">Surat</a></li>
+      @if (Request::is('surat')) <li class="active"> @else <li> @endif
+      <a href="{{ url('pdf') }}">Surat</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       @if(Auth::guest())

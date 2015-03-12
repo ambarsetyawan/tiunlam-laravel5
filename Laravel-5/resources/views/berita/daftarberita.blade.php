@@ -5,7 +5,7 @@
 <h2>Daftar Berita</h2>
 @if ($semua_berita->count())
     @foreach($semua_berita as $berita)
-    <h4><a href="{{URL::to('/')}}/berita/{{$berita->slug}}">{{ $berita->judul }}</a></a></h4>
+    <h4><a href="{{url('/berita')}}/{{$berita->slug}}">{{ $berita->judul }}</a></a></h4>
     @endforeach
 @else
     Tidak ada berita.
@@ -14,7 +14,7 @@
 <h2>All News</h2>
 @if ($semua_berita->count())
     @foreach($semua_berita as $berita)
-    <h4><a href="{{URL::to('/')}}/en/news/{{$berita->slug}}">{{ $berita->judul }}</a></a></h4>
+    <h4><a href="{{url('/en/news')}}/{{$berita->slug}}">{{ $berita->judul }}</a></a></h4>
     @endforeach
 @else
     No News.
